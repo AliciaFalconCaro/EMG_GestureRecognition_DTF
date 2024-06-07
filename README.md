@@ -1,4 +1,4 @@
-# EMG_GestureRecognition_DTF
+# Gesture Recognition via Estimation of Information Exchange between Muscles
 EMG analysis for Gesture recognition via estimation of information exchange between muscles using Directed Transfer Function (DTF). 
 
 The code provided here was tested on MATLAB2022b and EEGLAB2021.
