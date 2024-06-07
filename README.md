@@ -3,8 +3,6 @@ EMG analysis for Gesture recognition via estimation of information exchange betw
 
 The code provided here was tested on MATLAB2022b and EEGLAB2021.
 
-The pre-print of the paper is included in the repository. You can access the peer-reviewed final published paper through this [link](https://ieeexplore.ieee.org/document/10167950).
-
 # Citation
 **Please cite this repository as:**
 
