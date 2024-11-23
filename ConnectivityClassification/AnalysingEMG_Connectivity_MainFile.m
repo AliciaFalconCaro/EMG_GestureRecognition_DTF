@@ -113,8 +113,8 @@ combinedData = preview(DataStore)
 % plotsigroi(msk,sig(:,1))
 % 
 
-%% preprocess data and apply connectivity for each segment of data (1s segment)
-trainDatastore = transform(DataStore,@ConnectivityProcessing_v2); 
+%% preprocessing data and apply connectivity for each segment of data (1s segment)
+trainDatastore = transform(DataStore,@EMGProcessingAndConnectivityAnalysis); 
 transformedData = preview(trainDatastore)
 
 %after downsample, the fs is changed. Downsampled by factor of 3 for consistency
