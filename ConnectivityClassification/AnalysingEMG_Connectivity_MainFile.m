@@ -141,4 +141,5 @@ for i=2:size(traindata(:,2),1)
     Y=cat(1,Y,n1); %Y contains the array observations x 1, with the list of features as doubles. 
 end
 
+%% We use the classification learner toolbox from MATLAB for the classification of the cleaned and preprocessed data. We train and evaluate multiple traditional ML classifiers (such as SVM, KNN, Decision Trees) and choose the best option.  
 classificationLearner
