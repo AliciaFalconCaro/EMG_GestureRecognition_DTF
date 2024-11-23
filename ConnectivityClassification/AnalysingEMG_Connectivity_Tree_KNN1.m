@@ -5,14 +5,14 @@ fs = 5120;
 %create datastore type with all the data
 datasetFolder = fullfile("EMGData");
 
-SignalDatastore = signalDatastore(datasetFolder,IncludeSubFolders=true,SampleRate=fs); %sds1 
+SignalDatastore = signalDatastore(datasetFolder,IncludeSubFolders=true,SampleRate=fs); 
 p = endsWith(SignalDatastore.Files,"d.mat");
-EMGsignal = subset(SignalDatastore,p); %sdssig
+EMGsignal = subset(SignalDatastore,p); 
 
 %include and associate labels
-LabelsDatastore = signalDatastore(datasetFolder,SignalVariableNames=["motion";"data_start";"data_end"],IncludeSubfolders=true); %sds2 
+LabelsDatastore = signalDatastore(datasetFolder,SignalVariableNames=["motion";"data_start";"data_end"],IncludeSubfolders=true);  
 p = endsWith(LabelsDatastore.Files,"i.mat");
-EMGLabel = subset(LabelsDatastore,p); %sdslbl 
+EMGLabel = subset(LabelsDatastore,p);  
 
 %define the region of interest for each motion based on the labels. We remove the first label value (-1) since it is asociated with rest time. The other labels are converted into an array
 
@@ -28,15 +28,7 @@ while hasdata(EMGLabel)
     value = categorical(label{1}(2:end)',[0 1 2 3 4 6 7 8 9], ...
           [ "Relax" "Idle" "Fist" "Flexion" "Extension" "PinchIndex" "PinchMiddle" "PinchRing" "PinchSmall"]);
     ROI = [idx_start idx_end];
-
-    % In some cases, the number of label values and ROIs are not equal.
-    % To eliminate these inconsistencies, remove the extra label value or ROI limits. 
-%     if numel(value) < size(ROI,1)
-%         ROI(end,:) = [];
-%     elseif numel(value) > size(ROI,1)
-%         value(end) = [];
-%     end
-% 
+ 
     LabelTable = table(ROI,value);
     labels{i} = {LabelTable};
 
@@ -44,18 +36,18 @@ while hasdata(EMGLabel)
 end
 
 
-% New datastore containing the modified label data and display the ROI table from the first observation.
-LabelDatastore = signalDatastore(labels); %lblDS
+% New datastore containing the modified label data and display the ROI table from the first observation
+LabelDatastore = signalDatastore(labels); 
 LabelsTable = preview(LabelDatastore);
 LabelsTable{1}
 
 % Combine the signal and label data into one datastore.
-DataStore = combine(EMGsignal,LabelDatastore); %DS
+DataStore = combine(EMGsignal,LabelDatastore); 
 
 %Preview combine data of first observation (subject 1, session 1)
 combinedData = preview(DataStore)
 
-%% Create a signal mask and call plotsigroi to display the labeled motion regions for the first channel of the first signal
+%% Create a signal mask and call plotsigroi to display the labeled motion regions for the first channel of the first signal (only used for visualization of signals)
 % figure
 % msk = signalMask(combinedData{2});
 % plotsigroi(msk,combinedData{1}(:,1))
@@ -122,10 +114,10 @@ combinedData = preview(DataStore)
 % 
 
 %% preprocess data and apply connectivity for each segment of data (1s segment)
-trainDatastore = transform(DataStore,@ConnectivityProcessing_v2); %tDS
+trainDatastore = transform(DataStore,@ConnectivityProcessing_v2); 
 transformedData = preview(trainDatastore)
 
-%after downsample, the fs is changed. Downsampled by factor of 3
+%after downsample, the fs is changed. Downsampled by factor of 3 for consistency
 f=fs/3;
 fs_downsample=ceil(f);
 
