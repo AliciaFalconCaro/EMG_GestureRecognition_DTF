@@ -108,8 +108,6 @@ end
             end
         end
 
-%     lblOut{i,2} = Labels';
-
     end
 
 % Create a cell array containing mask chunks
