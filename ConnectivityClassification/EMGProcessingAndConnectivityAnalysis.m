@@ -1,4 +1,4 @@
-function Tsds = ConnectivityProcessing_v2(inputDS)
+function Tsds = EMGProcessingAndConnectivityAnalysis(inputDS)
 
 % uses slidding windows, overlap and average of frequency. The labels are
 % averaged for each slidding window.
