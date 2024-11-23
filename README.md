@@ -1,16 +1,16 @@
 # Gesture Recognition via Estimation of Information Exchange between Muscles
-EMG analysis for Gesture recognition via estimation of information exchange between muscles using Directed Transfer Function (DTF). 
+EMG analysis for Gesture recognition via estimation of information exchange between muscles using Directed Transfer Function (DTF), as described in [1]
 
 The code provided here was tested on MATLAB2022b. This code is based on the example provided by MATLAB ["Classify Arm Motions Using EMG Signals and Deep Learning"](https://uk.mathworks.com/help/signal/ug/classify-arm-motions-using-emg-signals-and-deep-learning.html). 
 
-This code makes use of the Arfit Toolbox [1] and the Time-Varying EEG Connectivity: A Time-Frequency Approach Toolbox [2].
+This code makes use of the Arfit Toolbox [2] and the Time-Varying EEG Connectivity: A Time-Frequency Approach Toolbox [3].
 
 
+[1] A. Falcon-Caro and S. Sanei, "Gesture Recognition via Estimation of Information Exchange between Muscles," 2023 24th International Conference on Digital Signal Processing (DSP), Rhodes (Rodos), Greece, 2023, pp. 1-5.
 
+[2] Schneider, Tapio, and Arnold Neumaier. "Algorithm 808: ARfit—A Matlab package for the estimation of parameters and eigenmodes of multivariate autoregressive models." ACM Transactions on Mathematical Software (TOMS) 27.1 (2001): 58-65.
 
-[1] Schneider, Tapio, and Arnold Neumaier. "Algorithm 808: ARfit—A Matlab package for the estimation of parameters and eigenmodes of multivariate autoregressive models." ACM Transactions on Mathematical Software (TOMS) 27.1 (2001): 58-65.
-
-[2] A. Omidvarnia, M. Mesbah, J. M. O'Toole et al., "Analysis of the time-varying cortical neural connectivity in the newborn EEG: A time-frequency approach", in Systems, Signal Processing and their Applications (WOSSPA), 2011 7th International Workshop on, 2011, pp. 179-182.
+[3] A. Omidvarnia, M. Mesbah, J. M. O'Toole et al., "Analysis of the time-varying cortical neural connectivity in the newborn EEG: A time-frequency approach", in Systems, Signal Processing and their Applications (WOSSPA), 2011 7th International Workshop on, 2011, pp. 179-182.
 
 # Citation
 **Please cite this repository as:**
